@@ -11,14 +11,16 @@ repositories {
     mavenCentral()
 }
 
+test {
+    useJUnitPlatform()
+}
+
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.1'
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.7.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.1")
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.7.1")
     compile("org.springframework.boot:spring-boot-starter-web")
     compile group: 'org.projectlombok', name: 'lombok', version: '1.18.16'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-}
-
-test {
-    useJUnitPlatform()
 }
